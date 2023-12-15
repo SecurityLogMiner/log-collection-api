@@ -1,21 +1,15 @@
-use std::fs::File;
-use std::io::Read;
-use warp::Filter;
-use serde::{Deserialize, Serialize};
+mod api;
+mod extractors;
+mod middlewares;
+mod types;
 
-#[derive(Deserialize,Serialize,Debug)]
-struct User {
-    name: String,
-    key: String,
-}
-fn read_db() -> Result<Vec<User>, std::io::Error> {
-    let mut db = File::open("user.db")?;
-    let mut users: Vec<User> = Vec::new();
-    //db.read_to_end(&mut users)?;
-    Ok(users)
-}
-#[tokio::main]
-async fn main() {
+use actix_web::{App, HttpServer};
+use dotenv::dotenv;
+
+#[actix_web::main]
+async fn main() -> std::io::Result<()> {
+    // need to fit this into the startup code
+    /*
     let user_data = match read_db() {
         Err(e) => {
             let _ = File::create("user.db");
@@ -23,25 +17,22 @@ async fn main() {
         Ok(res) => res, 
     };
     println!("{:?}", Ok(user_data));
-
-
-    /*
-    // GET /
-    let home = warp::path::end()
-        .map(|| format!("home endpoint"));
-
-    // POST /register
-    let register = warp::post()
-        .and(warp::path("register"))
-        .and(warp::path::param::<u32>())
-        .and(warp::body::json())
-        .map(|user|, mut user: User| {
-            user.name = name
-        }
-    warp::serve(home)
-        .run(([127,0,0,1],6000))
-        .await;
     */
+    dotenv().ok();
+    env_logger::init();
+    let config = types::Config::default();
+    let auth0_config = extractors::Auth0Config::default();
+
+    HttpServer::new(move || {
+        App::new()
+            .app_data(auth0_config.clone())
+            .wrap(middlewares::cors(&config.client_origin_url))
+            .wrap(middlewares::err_handlers())
+            .wrap(middlewares::security_headers())
+            .wrap(middlewares::logger())
+            .service(api::routes())
+    })
+    .bind((config.host, config.port))?
+    .run()
+    .await
 }
-
-
