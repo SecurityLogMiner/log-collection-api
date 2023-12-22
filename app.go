@@ -1,18 +1,16 @@
-package main
+package main 
 
 import (
-	//"log-collection-api/middleware"
+	"log-collection-api/middleware"
 	"log"
-	//"net/http"
-    "os"
+	"net/http"
 
-	//jwtmiddleware "github.com/auth0/go-jwt-middleware/v2"
-	//"github.com/auth0/go-jwt-middleware/v2/validator"
+	jwtmiddleware "github.com/auth0/go-jwt-middleware/v2"
+	"github.com/auth0/go-jwt-middleware/v2/validator"
     "github.com/rs/cors"
-    //"github.com/unrolled/secure"
-	"github.com/joho/godotenv"
+    "github.com/unrolled/secure"
 )
-/*
+
 type Config struct {
     Port string
     CorsOptions cors.Options
@@ -77,31 +75,4 @@ func (app *App) StartServer() {
     log.Printf("API server running on %s", server.Addr)
     log.Fatal(server.ListenAndServe())
 }
-*/
 
-func main() {
-	if err := godotenv.Load(); err != nil {
-		log.Fatalf("Error loading the .env file: %v", err)
-	}
-
-    config := Config {
-        Port: os.Getenv("PORT"),
-        CorsOptions: cors.Options{
-            AllowedOrigins: []string{os.Getenv("CLIENT_ORIGIN_URL")},
-            AllowedMethods: []string{"GET"},
-            AllowedHeaders: []string{"Content-Type", "Authorization"},
-            MaxAge: 86400,
-        },
-        Audience: os.Getenv("AUTH0_AUDIENCE"),
-        Domain: os.Getenv("AUTH0_DOMAIN"),
-    }
-
-    app := App{Config: config}
-    /*
-	log.Print("Server listening on http://localhost:6060")
-	if err := http.ListenAndServe("0.0.0.0:6060", router); err != nil {
-		log.Fatalf("There was an error with the http server: %v", err)
-	}
-    */
-    app.StartServer();
-}
