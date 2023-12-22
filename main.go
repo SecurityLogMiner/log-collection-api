@@ -11,7 +11,6 @@ func main() {
 	if err := godotenv.Load(); err != nil {
 		log.Fatalf("Error loading the .env file: %v", err)
 	}
-
     config := Config {
         Port: os.Getenv("PORT"),
         CorsOptions: cors.Options{
@@ -23,8 +22,6 @@ func main() {
         Audience: os.Getenv("AUTH0_AUDIENCE"),
         Domain: os.Getenv("AUTH0_DOMAIN"),
     }
-
     app := App{Config: config}
-
     app.StartServer();
 }
