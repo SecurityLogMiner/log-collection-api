@@ -1,7 +1,7 @@
 package routes 
 
 import (
-	"log-collection-api/middleware"
+	"log-collection-api/pkg/middleware"
 	"log"
 	"net/http"
 

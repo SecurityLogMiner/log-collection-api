@@ -3,8 +3,8 @@ package main
 import (
 	"log"
     "os"
-    "github.com/rs/cors"
 	"github.com/joho/godotenv"
+    "log-collection-api/pkg/config"
 )
 
 func main() {
@@ -13,12 +13,7 @@ func main() {
 	}
     config := Config {
         Port: os.Getenv("PORT"),
-        CorsOptions: cors.Options{
-            AllowedOrigins: []string{os.Getenv("CLIENT_ORIGIN_URL")},
-            AllowedMethods: []string{"GET"},
-            AllowedHeaders: []string{"Content-Type", "Authorization"},
-            MaxAge: 86400,
-        },
+        CorsOptions: config.CorsOptions(),
         Audience: os.Getenv("AUTH0_AUDIENCE"),
         Domain: os.Getenv("AUTH0_DOMAIN"),
     }
