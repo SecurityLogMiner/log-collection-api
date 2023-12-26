@@ -6,9 +6,21 @@
 - [Data Types](#data-types)
 - [Endpoints](#endpoints)
 - [Resources](#resources)
+<<<<<<< HEAD
 - [Todo](#todo)
 
 ### Data Types
+
+=======
+
+## TODO
+[ ] creating new certificates
+[ ] storing the new certificates in a database, with a unique-user-id and certificate value
+[ ] storing the UUID and encrypted private key cooresponding to the certificate
+
+### Data Types
+- User kj
+>>>>>>> 688ff65a35a3205257ceddfa21b47155d53e99d0
 
 ### Endpoints
 ```

@@ -2,13 +2,14 @@
 
 ## Table of Contents
 
-- [Overview](#overview)
-- [Data Types](#data-types)
-- [Endpoints](#endpoints)
-- [Resources](#resources)
-- [Todo](#todo)
+[Overview](#overview)
+[Endpoints](#endpoints)
+[Resources](#resources)
 
-### Data Types
+## TODO
+[] creating new certificates
+[] storing the new certificates in a database, with a unique-user-id and certificate value
+[] storing the UUID and encrypted private key cooresponding to the certificate
 
 ### Endpoints
 ```
@@ -36,9 +37,3 @@ Response JSON:
 
 ### Resources
 [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses)
-
-## TODO
-- [ ] creating new certificates
-- [ ] storing the new certificates in a database, with a unique-user-id and certificate value
-- [ ] storing the UUID and encrypted private key corresponding to the certificate
-
