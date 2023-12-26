@@ -2,14 +2,18 @@
 
 ## Table of Contents
 
-[Overview](#overview)
-[Endpoints](#endpoints)
-[Resources](#resources)
+- [Overview](#overview)
+- [Data Types](#data-types)
+- [Endpoints](#endpoints)
+- [Resources](#resources)
 
 ## TODO
-[] creating new certificates
-[] storing the new certificates in a database, with a unique-user-id and certificate value
-[] storing the UUID and encrypted private key cooresponding to the certificate
+[ ] creating new certificates
+[ ] storing the new certificates in a database, with a unique-user-id and certificate value
+[ ] storing the UUID and encrypted private key cooresponding to the certificate
+
+### Data Types
+- User kj
 
 ### Endpoints
 ```
