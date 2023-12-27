@@ -42,7 +42,7 @@ Response JSON:
 <a href="#table-of-contents" style="font-size:smaller;">back to top</a>
 
 ### Testing
-Must have the server running before testing:
+Must have the server running before testing. Then:
 ```
 go run ./tests/scripts/tests.go
 ```
