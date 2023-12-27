@@ -1,2 +1,3 @@
 /target
-bearer.sh
+.env
+.env.test

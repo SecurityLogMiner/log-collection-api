@@ -5,6 +5,7 @@
 - [Overview](#overview)
 - [Data Types](#data-types)
 - [Endpoints](#endpoints)
+- [Testing](#testing)
 - [Resources](#resources)
 - [Todo](#todo)
 
@@ -36,6 +37,14 @@ Response JSON:
 --404 Failure--
 |**Key**|**Value**|
 |*Error*| Unable to locate requested resource.|
+```
+
+<a href="#table-of-contents" style="font-size:smaller;">back to top</a>
+
+### Testing
+Must have the server running before testing:
+```
+go run ./tests/scripts/tests.go
 ```
 
 <a href="#table-of-contents" style="font-size:smaller;">back to top</a>
