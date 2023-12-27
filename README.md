@@ -43,6 +43,7 @@ Response JSON:
 
 ### Resources
 [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses)
+[Go API Authorization](https://auth0.com/docs/quickstart/backend/golang)
 
 ## TODO
 - [ ] creating new certificates
