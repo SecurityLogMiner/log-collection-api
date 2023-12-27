@@ -22,7 +22,7 @@ type App struct {
 
 func (app *App) StartServer() {
 
-    router := routes.Router()
+    router := routes.Router(app.Config.Audience, app.Config.Domain)
     corsMiddleware := cors.New(app.Config.CorsOptions)
     routerWithCORS := corsMiddleware.Handler(router)
 

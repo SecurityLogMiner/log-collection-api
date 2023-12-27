@@ -8,6 +8,13 @@
 - [Resources](#resources)
 - [Todo](#todo)
 
+### Overview
+A user first visits the site. 
+A prerequisite to accessing the api is the user have an email associated with an
+Auth0 tenant.
+
+Then, from their dashboard, they make their requests using a valid JWT.
+
 ### Data Types
 
 ### Endpoints
@@ -41,4 +48,5 @@ Response JSON:
 - [ ] creating new certificates
 - [ ] storing the new certificates in a database, with a unique-user-id and certificate value
 - [ ] storing the UUID and encrypted private key corresponding to the certificate
+
 
