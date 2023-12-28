@@ -3,6 +3,7 @@
 package middleware
 
 import (
+    "strings"
 	"context"
 	"log"
 	"net/http"
