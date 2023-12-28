@@ -51,12 +51,17 @@ go run ./tests/scripts/tests.go
 
 
 ### Resources
-[HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses)
-[API Example](https://auth0.com/docs/quickstart/backend/golang)
+- [HTTP Status Codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status#client_error_responses)
+- [API Example](https://auth0.com/docs/quickstart/backend/golang)
+
 
 ## TODO
+- [ ] launch a database connection in the server repo
+- [ ] setup the tables for:
+    1. email:uuid       string:string
+    2. uuid:cert        string:string
+        - used for the TLS(client > server) connection once software starts
+    3. uuid:ips         string:[...,string]
 - [ ] creating new certificates
-- [ ] storing the new certificates in a database, with a unique-user-id and certificate value
-- [ ] storing the UUID and encrypted private key corresponding to the certificate
 
 
