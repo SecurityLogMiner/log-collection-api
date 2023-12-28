@@ -1,3 +1,8 @@
 /target
 .env
 .env.test
+
+
+# weird draw.io backup files when diagram is open
+.$*.bkp
+.$.*
